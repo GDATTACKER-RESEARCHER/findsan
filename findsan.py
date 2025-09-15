@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import argparse
 import termcolor
 import socket
@@ -9,7 +10,7 @@ import threading
 from tqdm import tqdm  # Import tqdm for progress bar
 
 def tldExt(name):
-    return tldextract.extract(name).registered_domain
+    return tldextract.extract(name).top_domain_under_public_suffix
 
 def find_sans(domains, san_type, output_file, max_retries, timeout, custom_port, verbose):
     finalset = set(domains)
